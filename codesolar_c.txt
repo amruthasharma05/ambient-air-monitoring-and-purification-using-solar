@@ -1,0 +1,80 @@
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+#include <ESP8266WiFi.h>
+
+
+#define MQ135_PIN A0
+#define RELAY_PIN D5
+
+
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+
+int airValue = 0;
+int threshold = 300;
+
+
+// WiFi credentials
+const char* ssid = "ROBOCAR";
+const char* password = "12345678";
+
+
+void setup() {
+  // Sensor + Relay setup
+  pinMode(MQ135_PIN, INPUT);
+  pinMode(RELAY_PIN, OUTPUT);
+  digitalWrite(RELAY_PIN, LOW);
+
+
+  // LCD setup
+  lcd.init();
+  lcd.backlight();
+  lcd.setCursor(0,0);
+  lcd.print("Air Quality");
+  lcd.setCursor(0,1);
+  lcd.print("Monitoring");
+  delay(2000);
+  lcd.clear();
+
+
+  // WiFi setup
+  WiFi.begin(ssid, password);
+  lcd.setCursor(0,0);
+  lcd.print("Connecting WiFi");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    lcd.setCursor(0,1);
+    lcd.print(".");
+  }
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("WiFi Connected");
+  delay(2000);
+  lcd.clear();
+}
+
+
+void loop() {
+  airValue = analogRead(MQ135_PIN);
+
+
+  lcd.setCursor(0,0);
+  lcd.print("MQ135: ");
+  lcd.print(airValue);
+  lcd.print("    "); // clear trailing digits
+
+
+  if (airValue > threshold) {
+    digitalWrite(RELAY_PIN, HIGH); // Fan ON
+    lcd.setCursor(0,1);
+    lcd.print("Air: POOR ");
+  } else {
+    digitalWrite(RELAY_PIN, LOW); // Fan OFF
+    lcd.setCursor(0,1);
+    lcd.print("Air: GOOD ");
+  }
+
+
+  delay(2000);
+}
+
