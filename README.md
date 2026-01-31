@@ -12,6 +12,11 @@ This project focuses on monitoring ambient air quality and performing air purifi
  Relay module
  Air purification unit (fan / filter)
 
+## System Block Diagram
+[Block Diagram](block_diagrams.jpeg)
+
+
+
 ## Working Principle
 The air quality sensor continuously monitors the surrounding air. When the pollution level is less than a set threshold of AQI data, the microcontroller activates the relay to turn ON the purification unit. When the air quality returns to normal, the purification unit is turned OFF automatically. The system operates using power generated from a solar panel and stored in a battery.
 
