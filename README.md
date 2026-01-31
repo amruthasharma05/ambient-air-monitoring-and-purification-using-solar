@@ -16,7 +16,7 @@ This project focuses on monitoring ambient air quality and performing air purifi
 ![Block Diagram](block_diagrams.jpeg)
 
 ##System Interface Diagram
-![Interface Diagram](block_diagrams.jpeg)
+![Interface Diagram](Interface_diagram.jpeg)
 
 
 
