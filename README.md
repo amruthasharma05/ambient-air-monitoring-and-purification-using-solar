@@ -13,7 +13,7 @@ This project focuses on monitoring ambient air quality and performing air purifi
  Air purification unit (fan / filter)
 
 ## System Block Diagram
-[Block Diagram](block_diagrams.jpeg)
+![Block Diagram](block_diagrams.jpeg)
 
 
 
