@@ -32,7 +32,7 @@ The air quality sensor continuously monitors the surrounding air. When the pollu
 ![Result](Result_2.jpeg)
 
 ##Poster
-![poster](Postermini_b2.jpeg)
+![poster](Poster_mini_b2.jpeg)
 
 
 
