@@ -18,12 +18,17 @@ This project focuses on monitoring ambient air quality and performing air purifi
 ##System Interface Diagram
 ![Interface Diagram](Interface_diagram.jpeg)
 
-
-
+##Hardware Setup
+![Connections](Hardware_setup.jpeg)
 
 
 ## Working Principle
 The air quality sensor continuously monitors the surrounding air. When the pollution level is less than a set threshold of AQI data, the microcontroller activates the relay to turn ON the purification unit. When the air quality returns to normal, the purification unit is turned OFF automatically. The system operates using power generated from a solar panel and stored in a battery.
+
+##Results
+![Result](Result_1.jpeg)
+![Result](Result_2.jpeg)
+
 
 ## Applications
 - Environmental monitoring
