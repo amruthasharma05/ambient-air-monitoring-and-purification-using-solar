@@ -31,6 +31,11 @@ The air quality sensor continuously monitors the surrounding air. When the pollu
 ![Result](Result_1.jpeg)
 ![Result](Result_2.jpeg)
 
+##Poster
+![poster](Postermini_b2.jpeg)
+
+
+
 
 ## Applications
 - Environmental monitoring
